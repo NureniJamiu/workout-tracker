@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { useAuthContext } from "./useAuthContext";
 
 export const useSignup = () => {
   const [error, setError] = useState(null);
@@ -20,12 +20,13 @@ export const useSignup = () => {
 
     if (!response.ok) {
       setIsLoading(false);
-      setError(null);
+      setError(json.error);
     }
 
     if (response.ok) {
       // store user to localStorage
       localStorage.setItem("user", JSON.stringify(json));
+      // dispatch login action
       dispatch({ type: "LOGIN", payload: json });
       setIsLoading(false);
     }

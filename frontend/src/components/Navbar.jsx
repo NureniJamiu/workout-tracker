@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useLogout } from "../hooks/useLogout";
 
 const Navbar = () => {
+  const { logout } = useLogout();
+
+  const handleLogout = () => {
+    logout();
+  };
   return (
     <div className="flex px-8 py-6 items-center justify-between lg:px-20">
       <Link to="/">
@@ -9,7 +15,15 @@ const Navbar = () => {
           <span className="font-normal text-black">TRACKER</span>
         </h1>
       </Link>
-      <nav>
+      <nav className="flex gap-5">
+        <div>
+          <button
+            onClick={handleLogout}
+            className="border-2 border-blue-500 text-blue-500 py-1 px-2 rounded"
+          >
+            Logout
+          </button>
+        </div>
         <div className="flex gap-5 items-center justify-between">
           <Link to="/login" className="hover:text-blue-600">
             Login

@@ -40,7 +40,11 @@ const Signup = () => {
         >
           Sign up
         </button>
-        {error && <div>{error}</div>}
+        {error && (
+          <div className="text-md border-2 border-red-400 text-red-500 px-3 py-2 mt-2">
+            {error}
+          </div>
+        )}
       </form>
     </div>
   );
