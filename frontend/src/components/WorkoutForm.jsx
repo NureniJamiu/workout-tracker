@@ -50,7 +50,11 @@ const WorkoutForm = () => {
           type="text"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
-          className="w-full border-2 border-white px-2 rounded focus:outline-none focus:border-2 focus:border-gray-400 focus:rounded-md"
+          className={
+            emptyFields.includes("title")
+              ? "error"
+              : "w-full border-2 border-white px-2 rounded focus:outline-none focus:border-2 focus:border-gray-400 focus:rounded-md"
+          }
         />
 
         <label>Load (in kg):</label>
@@ -58,7 +62,11 @@ const WorkoutForm = () => {
           type="number"
           onChange={(e) => setLoad(e.target.value)}
           value={load}
-          className="w-full border-2 border-white px-2 rounded focus:outline-none focus:border-2 focus:border-gray-400 focus:rounded-md"
+          className={
+            emptyFields.includes("load")
+              ? "error"
+              : "w-full border-2 border-white px-2 rounded focus:outline-none focus:border-2 focus:border-gray-400 focus:rounded-md"
+          }
         />
 
         <label>Reps:</label>
@@ -66,7 +74,11 @@ const WorkoutForm = () => {
           type="number"
           onChange={(e) => setReps(e.target.value)}
           value={reps}
-          className="w-full border-2 border-white px-2 rounded focus:outline-none focus:border-2 focus:border-gray-400 focus:rounded-md"
+          className={
+            emptyFields.includes("reps")
+              ? "error"
+              : "w-full border-2 border-white px-2 rounded focus:outline-none focus:border-2 focus:border-gray-400 focus:rounded-md"
+          }
         />
         <button className="my-4 text-center bg-blue-600 px-4 py-2 rounded text-white text-sm">
           Add Workout
