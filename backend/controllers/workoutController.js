@@ -126,8 +126,8 @@ const deleteWorkout = async (req, res) => {
     return res.status(400).json({ error: "No such workout" });
   }
   // but if everything went well and the workout with that has the request parameter id gets deleted,
-  // return a 200 status code and a nice json message: "Workout deleted"
-  res.status(200).json({ message: "workout deleted" });
+  // return a 200 status code and the json object of the workout
+  res.status(200).json(workout);
 };
 // export all controllers
 module.exports = {

@@ -7,6 +7,8 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 // import workout routes from "routes" directory as "workoutRoutes"
 const workoutRoutes = require("./routes/workouts");
+// import user routes from "routes" directory as "userRoutes"
+const userRoutes = require("./routes/user");
 
 // INITIALIZATION AND CONFIGURATIONS
 // initialize express server
@@ -25,6 +27,7 @@ app.use((req, res, next) => {
 
 // ROUTE
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/users", userRoutes);
 
 // CONNECT TO DB
 mongoose.set("strictQuery", false);
