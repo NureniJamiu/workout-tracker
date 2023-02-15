@@ -42,7 +42,7 @@ const Signup = () => {
           Sign up
         </button>
         {error && (
-          <div className="text-md border-2 border-red-400 text-red-500 px-3 py-2 mt-5 animate-bounce">
+          <div className="text-md border-2 bg-red-100 border-red-400 text-red-500 px-3 py-2 mt-5 animate-bounce">
             {error}
           </div>
         )}
