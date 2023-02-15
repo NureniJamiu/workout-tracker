@@ -10,7 +10,6 @@ const Signup = () => {
     e.preventDefault();
 
     await signup(email, password);
-    setPassword("");
   };
 
   return (
