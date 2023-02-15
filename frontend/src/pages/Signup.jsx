@@ -18,7 +18,21 @@ const Signup = () => {
         className="grid bg-white max-w-[400px] p-5 rounded mx-auto"
         onSubmit={handleSubmit}
       >
-        <h3 className="font-bold text-lg mb-2">Sign up</h3>
+        <h3 className="font-bold text-xl mb-2">Sign up</h3>
+        <div className="text-center grid">
+          <small className="">
+            ...or try <span className="text-blue-700">logging in</span> with our
+            "Demo" account instead
+          </small>
+          <small>
+            Email:{" "}
+            <span className="font-semibold text-blue-600">demo@demo.com</span>
+          </small>
+          <small>
+            Password:{" "}
+            <span className="font-semibold text-blue-600">Demo123!@#</span>
+          </small>
+        </div>
         <label className="mb-1">Email:</label>
         <input
           type="email"

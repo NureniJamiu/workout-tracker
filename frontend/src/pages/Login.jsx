@@ -18,8 +18,21 @@ const Login = () => {
         className="grid bg-white max-w-[400px] p-5 rounded mx-auto"
         onSubmit={handleSubmit}
       >
-        <h3 className="font-bold text-lg mb-2">Login</h3>
-        <label className="mb-1">Email:</label>
+        <h3 className="font-bold text-xl mb-2">Login</h3>
+        <div className="text-center grid">
+          <small className="">
+            ...or feel free to use our "Demo" account instead
+          </small>
+          <small>
+            Email:{" "}
+            <span className="font-semibold text-blue-600">demo@demo.com</span>
+          </small>
+          <small>
+            Password:{" "}
+            <span className="font-semibold text-blue-600">Demo123!@#</span>
+          </small>
+        </div>
+        <label className="mb-1 mt-2">Email:</label>
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
