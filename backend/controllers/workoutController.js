@@ -5,9 +5,10 @@ const mongoose = require("mongoose");
 
 // GET ALL WORKOUTS
 const getWorkouts = async (req, res) => {
+  const user_id = req.user._id;
   try {
     // finds all created workouts after sorting them by the date created and saves them in the "workout" constant
-    const workout = await Workout.find({}).sort({ createdAt: -1 });
+    const workout = await Workout.find({ user_id }).sort({ createdAt: -1 });
     // if successful, return a status code '200' and the json format of the workouts saved in the "workout" constant.
     res.status(200).json(workout);
     // ...but if not successfull i.e in case of an error,
@@ -69,8 +70,10 @@ const createWorkout = async (req, res) => {
   }
   // if all fields are validated, try...
   try {
-    // ...creating, with these params (title, reps, and load), a new workout and save it in a "workout" constant
-    const workout = await Workout.create({ title, reps, load });
+    // save the user_id to a variable called "user_id"
+    const user_id = req.user._id;
+    // ...creating, with these params (title, reps, load, and user_id), a new workout and save it in a "workout" constant
+    const workout = await Workout.create({ title, reps, load, user_id });
     // return a 200 status code if successful and also the json format of the workout added.
     res.status(200).json(workout);
     // ...but if not successfull i.e in case of an error,
